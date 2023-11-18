@@ -92,11 +92,12 @@ def CreatData (pegawai) :
                     'Pendidikan Terakhir' : pendidikan,
                     'Jabatan' : jabatan,
                     'Status Pegawai' : status}
-                pegawai.append(data_pegawai)
                 
                 cek = input ('\nApakah Data Ini akan disimpan? (Yes/No) : ').upper()
                 if cek == 'YES' :
+                    pegawai.append(data_pegawai)
                     print ('\n------Data Berhasil Disimpan-----')
+                else :
                     break
         elif creat == '2' :
             return
@@ -245,7 +246,7 @@ def filterData(pegawai):
 
             # Filter berdasarkan status pegawai
             elif pilihan_filter == '4':
-                status = input('Masukkan Status Pegawai: ').upper()
+                status = input('Masukkan Status Pegawai: ').title().upper()
                 filtered_data = filter(lambda data: data['Status Pegawai'] == status, pegawai)
                 print_filtered_data(filtered_data)
 
