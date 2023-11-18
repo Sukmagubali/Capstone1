@@ -246,7 +246,7 @@ def filterData(pegawai):
 
             # Filter berdasarkan status pegawai
             elif pilihan_filter == '4':
-                status = input('Masukkan Status Pegawai: ').title().upper()
+                status = input('Masukkan Status Pegawai: ').upper()
                 filtered_data = filter(lambda data: data['Status Pegawai'] == status, pegawai)
                 print_filtered_data(filtered_data)
 
