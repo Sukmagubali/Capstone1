@@ -1,8 +1,7 @@
-
-pegawai = [{'Kode Pegawai': '001', 'Nama': 'Marheike Bawolye, M.Pd', 'Pendidikan Terakhir': 'Magister', 'Jabatan': 'Kepala Sekolah', 'Status Pegawai': 'PNS'},
-        {'Kode Pegawai': '002', 'Nama': 'Anna Alamri, M.Pd', 'Pendidikan Terakhir': 'Magister', 'Jabatan': 'Guru', 'Status Pegawai': 'PNS'},
-        {'Kode Pegawai': '003', 'Nama': 'Sukma Gubali, S.Pd', 'Pendidikan Terakhir': 'Sarjana', 'Jabatan': 'Guru', 'Status Pegawai': 'HONORER'},
-        {'Kode Pegawai': '004', 'Nama': 'Sri Gita Djafar, S.E', 'Pendidikan Terakhir': 'Sarjana', 'Jabatan': 'Tata Usaha', 'Status Pegawai': 'HONORER'}]
+pegawai = [{'Kode Pegawai': 'A001', 'Nama': 'Marheike Bawolye, M.Pd', 'Pendidikan Terakhir': 'Magister', 'Jabatan': 'Kepala Sekolah', 'Status Pegawai': 'PNS'},
+        {'Kode Pegawai': 'B001', 'Nama': 'Anna Alamri, M.Pd', 'Pendidikan Terakhir': 'Magister', 'Jabatan': 'Guru', 'Status Pegawai': 'PNS'},
+        {'Kode Pegawai': 'B002', 'Nama': 'Sukma Gubali, S.Pd', 'Pendidikan Terakhir': 'Sarjana', 'Jabatan': 'Guru', 'Status Pegawai': 'HONORER'},
+        {'Kode Pegawai': 'C001', 'Nama': 'Sri Gita Djafar, S.E', 'Pendidikan Terakhir': 'Sarjana', 'Jabatan': 'Tata Usaha', 'Status Pegawai': 'HONORER'}]
 
 
 #Membuat Menu Read Data
@@ -246,9 +245,10 @@ def filterData(pegawai):
 
             # Filter berdasarkan status pegawai
             elif pilihan_filter == '4':
-                status = input('Masukkan Status Pegawai: ').upper()
-                filtered_data = filter(lambda data: data['Status Pegawai'] == status, pegawai)
+                status = input('Masukkan Status Pegawai: ').capitalize()
+                filtered_data = filter(lambda data: data['Status Pegawai'].capitalize() == status.capitalize() or data['Status Pegawai'].upper() == status.upper(), pegawai)
                 print_filtered_data(filtered_data)
+
 
             elif pilihan_filter == '5':
                 break
@@ -292,7 +292,8 @@ while True :
     
     Masukkan angka menu yang Anda pilih (1/6): ''')
     if(Menu =='1'):
-       ReadData(pegawai)
+       ReadData(
+           pegawai)
     elif (Menu == '2'):
         CreatData (pegawai)
     elif (Menu == '3') :
